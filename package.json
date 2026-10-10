@@ -1,0 +1,41 @@
+{
+  "name": "swiadectwo-energetyczne24-mcp",
+  "version": "1.2.0",
+  "mcpName": "pl.swiadectwo-energetyczne24/zamowienia",
+  "description": "MCP server for Polish energy performance certificates: pricing, requirements, order, documents and payment link (swiadectwo-energetyczne24.pl)",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "energy-certificate",
+    "epc",
+    "real-estate",
+    "poland"
+  ],
+  "homepage": "https://swiadectwo-energetyczne24.pl/api#mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brilbrothers/swiadectwo-energetyczne24-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brilbrothers/swiadectwo-energetyczne24-mcp/issues"
+  },
+  "author": "BRIL BROTHERS INNOVATION LABS sp. z o.o.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "swiadectwo-energetyczne24-mcp": "index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "test": "node test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

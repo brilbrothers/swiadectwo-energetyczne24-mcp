@@ -1,0 +1,28 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "pl.swiadectwo-energetyczne24/zamowienia",
+  "title": "Świadectwo Energetyczne 24",
+  "description": "Polish energy performance certificates: pricing, requirements, order, documents, payment link",
+  "version": "1.2.0",
+  "websiteUrl": "https://swiadectwo-energetyczne24.pl",
+  "repository": {
+    "url": "https://github.com/brilbrothers/swiadectwo-energetyczne24-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://swiadectwo-energetyczne24.pl/api/mcp"
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "swiadectwo-energetyczne24-mcp",
+      "version": "1.2.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

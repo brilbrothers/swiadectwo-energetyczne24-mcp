@@ -1,0 +1,33 @@
+name: publish to MCP Registry
+
+on:
+  push:
+    branches: [main]
+    paths: [server.json, .github/workflows/publish-mcp.yml]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: mcp-publisher
+        run: |
+          curl -sL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
+      # The server name lives in the domain namespace (pl.swiadectwo-energetyczne24/…),
+      # so GitHub OIDC does not apply: ownership is proven with the Ed25519 key whose
+      # public half is served at https://swiadectwo-energetyczne24.pl/.well-known/mcp-registry-auth.
+      - name: login
+        env:
+          MCP_PRIVATE_KEY: ${{ secrets.MCP_PRIVATE_KEY }}
+        run: ./mcp-publisher login http --domain swiadectwo-energetyczne24.pl --private-key "$MCP_PRIVATE_KEY"
+      - name: publish
+        run: |
+          if ! ./mcp-publisher publish > out.txt 2>&1; then
+            cat out.txt
+            echo "::error::$(tr '\n' ' ' < out.txt)"
+            exit 1
+          fi
+          cat out.txt

@@ -1,0 +1,18 @@
+swiadectwo-energetyczne24-mcp
+Copyright (c) 2026 BRIL BROTHERS INNOVATION LABS sp. z o.o.
+
+The code in this repository is released under the MIT License (see LICENSE).
+
+The MIT License covers the code only. This server is a thin client: prices,
+offer descriptions, form questions and every other piece of content it returns
+come from https://swiadectwo-energetyczne24.pl and remain the property of the
+service operator. You may quote them with a link to the page they come from
+(order_url, payment link or https://swiadectwo-energetyczne24.pl).
+
+Orders created through this server are subject to the terms of service at
+https://swiadectwo-energetyczne24.pl/regulamin and the privacy policy at
+https://swiadectwo-energetyczne24.pl/polityka-prywatnosci. Legal consents and
+payment are always given by a person on the website, never through this server.
+
+Answers returned by the server are information about a commercial service, not
+legal or technical advice.
